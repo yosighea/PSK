@@ -1,0 +1,16 @@
+annuitasbungamajemuknominal <- function(num, i, t, nilai, m=TRUE, n=m*t, j=i/m, v=1/(1+j))
+  switch(num,  
+         satu = {
+           k_pvawal = nilai/((1-v^n)/(j))
+           cat("nilai k awal =",k_pvawal,"\n")
+           k_snawal = nilai/(((1+j)^n-1)/(j))
+           cat("nilai k akumulasi awal =",k_snawal)
+           
+         },
+         dua = {
+           k_pvakhir = nilai/((1-v^n)/(j*v))
+           cat("nilai k akhir =",k_pvakhir,"\n")
+           k_snakhir = nilai/((((1+j)^n)-1)/(j*v))
+           cat("nilai k akumulasi akhir =",k_snakhir)
+         }
+  )
