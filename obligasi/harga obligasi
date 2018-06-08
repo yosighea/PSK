@@ -1,0 +1,6 @@
+setwd("D:\\PSK R")
+obligasi<-function(f, r, i , n, v=1/(1+i)){
+  hargaobligasi = f*r*((1-(v^n))/i)+(f*(v^n))
+  return(hargaobligasi)
+  
+}
