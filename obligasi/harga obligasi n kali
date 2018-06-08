@@ -1,0 +1,6 @@
+setwd("D:\\PSK R")
+obligasinkali<-function(f, r, i , t, m, n=m*t, rbin=r/m , ibin=i/m , vbin=1/(1+ibin)){
+  hargaobligasi = f*rbin*((1-(vbin^n))/ibin)+(f*(vbin^n))
+  return(hargaobligasi)
+  
+}
