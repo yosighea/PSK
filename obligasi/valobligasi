@@ -1,0 +1,34 @@
+setwd("D:\\PSK R")
+valobligasi<-function(f, r, i , ttm , m , rbin=r/m , ibin=i/m , vbin=1/(1+ibin)){
+  t = ceiling(ttm*m+1)
+  b = ttm*m - floor(ttm*m)
+  k = 1-b
+#THEORITICAL METHOD
+  Bt = f*rbin*((1-(vbin^t))/ibin)+f*(vbin^t)
+  Bf1 = Bt*(1+ibin)^k
+  frk1 = f*rbin*((1+ibin)^k-1)/ibin
+  Bt = f*rbin*((1-(vbin^t))/ibin)+f*(vbin^t)
+  {
+  Bm1 = Bf1-frk1
+  }
+  cat ("Harga obligasi untuk Theoritical Method =",Bm1,"\n")
+#PRACTICAL METHOD
+  Bf2 = Bt*(1+k*ibin)
+  frk2 = k*f*rbin
+  Bm2 = Bf2-frk2
+  cat ("Harga obligasi untuk Practical Method =",Bm2,"\n")
+#SEMI-THEORITICAL METHOD
+  Bf3 = Bt*(1+ibin)^k
+  frk3 = k*f*rbin
+  Bm3 = Bf3-frk3
+  cat ("Harga obligasi untuk Semi-Theoritical Method =",Bm3,"\n")
+}
+#KETERANGAN
+#f = nilai nominal
+#r = tingkat kupon
+#i = tingkat yield
+#ttm = time to maturnity
+#m = banyak pemberian bunga dalam satu tahun
+#t = tahun
+#Bm = harga obligasi (pemilik baru)
+#frk = kupon bagian (pemilik lama)
