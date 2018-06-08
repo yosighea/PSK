@@ -1,0 +1,23 @@
+presentvalue <- function(num, A, i, t, m=TRUE)
+  switch(num, 
+         satu = {
+           pvbungatunggal = A/(1+i*t)
+           print(pvbungatunggal)
+         },
+         dua = {
+           pvbungamajemuknominal= A*(1+i/m)^(-m*t)
+           print(pvbungamajemuknominal)
+         },
+         tiga = {
+           pvbungamajemukkontinu = A*exp(-i*t)
+           print(pvbungamajemukkontinu)
+         }
+  )
+#A = Nilai Akumulasi
+#i = bunga
+#t = tahun
+#m = jangka waktu bayar dalam setahun
+#pilihan (num)
+#1 = bunga tunggal
+#2 = bunga majemuk nominal
+#3 = bunga majemuk kontinu
